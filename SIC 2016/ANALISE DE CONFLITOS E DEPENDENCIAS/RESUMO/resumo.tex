@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{article}
+%
+%%%% pacotes adicionais
+\usepackage{hyperref}
+\usepackage{comment}
+%
+%
+%%%% codificação e linguagem
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+%
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+%
+%%%% identificação do trabalho, autor e data
+%
+%
+%
+\title{Análise de Conflitos e Dependências em Modelos Computacionais baseados em Transformações de Grafos \footnote{O presente trabalho foi realizado com o apoio da Pró-Reitoria de Pesquisa - UFRGS - Brasil}}
+%
+\author{Autor: Leonardo Marques Rodrigues 
+		\footnote{Graduando em Ciência da Computação - INF - UFRGS, Bolsista da PROPESQ - UFRGS - Brasil} \\ 
+		Orientação: Prof. Drª. Leila Ribeiro 
+        \footnote{Professora Titular INF - UFRGS}}
+%
+%
+%%%%Inicio do documento
+\begin{document}
+%
+%
+%%%%Configuração do Título
+\makeatletter \renewcommand\@maketitle{%
+	\begin{center}
+    	\normalsize
+		\let\footnote\thanks 
+		{\normalsize \@title \par }
+		{\normalsize \@author \par }
+		\end{center} 
+} \makeatother
+%
+%
+%
+%
+%%%%Conteúdo do Documento
+\maketitle
+%
+%%%%Resumo
+\begin{abstract}
+
+\normalsize \emph{Gramáticas de grafos} são modelos visuais com os quais pode-se descrever sistemas, onde os estados são modelados através de grafos e o comportamento (ações que alteram os estados do sistema) como regras de reescrita de grafos, as quais são chamadas de \emph{regras de transformação}. A utilização desses modelos para a aplicação de métodos de verificação formal permite aliar uma apresentação visual e intuitiva com uma semântica de execução precisa.
+
+\vskip 5pt Dentre as possíveis análises que podem ser feitas sobre gramáticas de grafos encontra-se a análise de par crítico. Essa é uma análise estática que visa determinar todas as possíveis interações entre pares de regras, identificando situações como conflitos (a aplicação de uma regra impede a aplicação de outra) ou dependências (a aplicação de um regra depende da aplicação prévia de outra). Análise de par crítico é especialmente útil para gramáticas com muitas regras ou com regras complexas (contendo condições de aplicação), permitindo que o modelador possua uma visão global de todas as interações possíveis, habitualmente através de tabelas de conflitos e de dependências.
+
+\vskip 5pt No âmbito do projeto \emph{Verites}, está sendo desenvolvida uma nova ferramenta para edição, execução e verificação de modelos utilizando gramáticas de grafos, denominada \emph{Verigraph}\footnote{A ferramenta está sendo desenvolvida sob Licença de Código Aberto e está disponível em: \url{https://github.com/rodrigo-machado/verigraph}}. A motivação para desenvolvimento desta ferramenta surgiu da inexistência de uma única ferramenta que integrasse todas as funcionalidades necessárias para análises mais detalhadas de gramática de grafos, sendo isso um empecilho para a consolidação de técnicas de análise já existentes, bem como para a criação de novas. A ferramenta está ainda sob desenvolvimento, embora já possua funcionalidades importantes como análise de conflitos entre regras, análise de dependências entre regras e cálculo de regra concorrente a partir de uma derivação.
+
+\vskip 5pt Dentre as minhas contribuições para a ferramenta estão a implementação da busca de \emph{matches} (verificação da aplicabilidade de regras em um grafo), busca essa que é necessária para diferentes análises de uma gramática de grafos, inclusive para análise de par crítico. Além disso, incluem também na análise e comparação de desempenho com ferramentas já existentes, e auxilio ao mestrando Andrei Costa na implementação da análise de par crítico.
+
+\vskip 5pt Para ilustrar o funcionamento atual da ferramenta, será demonstrado um pequeno modelo através de uma gramática de grafos, a análise de par crítico entre as regras deste modelo, utilizando a ferramenta \emph{Verigraph}, bem como uma comparação preliminar de desempenho quantitativo e qualitativo com uma das ferramentas já existentes para análise de gramáticas de grafos.
+
+\end{abstract}
+
+\textbf{Palavras-Chave:} Gramática de Grafos, Regras de Transformação, Análise de Par Crítico
+
+\end{document}
