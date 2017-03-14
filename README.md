@@ -1,4 +1,4 @@
-# verites-presentations
+# presentations
 
 Presentations of the Verites Group
 
